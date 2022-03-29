@@ -151,12 +151,11 @@ def munkiinfo_report():
 
 def main():
     """Main"""
-    # Create cache dir if it does not exist
-    cachedir = '%s/cache' % os.path.dirname(os.path.realpath(__file__))
-    if not os.path.exists(cachedir):
-        os.makedirs(cachedir)
+
+    result = munkiinfo_report()
 
     # Write munkiinfo report to cache
+    cachedir = '%s/cache' % os.path.dirname(os.path.realpath(__file__))
     output_plist = os.path.join(cachedir, 'munkiinfo.plist')
     with open(output_plist, 'wb') as fp:
         plistlib.dump(munkiinfo_report(), fp)
