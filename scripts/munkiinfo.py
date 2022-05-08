@@ -1,4 +1,4 @@
-#!/usr/local/munkireport/munkireport-python2
+#!/usr/local/munkireport/munkireport-python3
 """
 munkiinfo for munkireport
 """
@@ -6,7 +6,7 @@ munkiinfo for munkireport
 import os
 import plistlib
 import sys
-import urlparse
+import urllib.parse
 import importlib
 
 # pylint: disable=E0611
@@ -20,8 +20,8 @@ except ImportError:
     # Legacy support
     try:
         from munkilib import munkicommon as prefs
-    except ImportError, msg:
-        print "%s" % msg
+    except ImportError as msg:
+        print("%s" % msg)
         exit(1)
 
 
@@ -100,7 +100,7 @@ def get_munkiprotocol():
     """The protocol munki is using"""
     software_repo_url = pref_to_str(prefs.pref('SoftwareRepoURL'))
     try:
-        url_parse = urlparse.urlparse(software_repo_url)
+        url_parse = urllib.parse.urlparse(software_repo_url)
         return url_parse.scheme
     except AttributeError:
         return 'Could not obtain protocol'
@@ -117,9 +117,9 @@ def middleware_checks():
                 middleware = importlib.import_module(middleware_name)
                 middleware_version = middleware.__version__
             except ImportError:
-                print "Error: munkiinfo.py - Error importing middleware for version checks."
+                print("Error: munkiinfo.py - Error importing middleware for version checks.")
             except AttributeError:
-                print "Error: munkiinfo.py - Error getting version attribute from middleware."
+                print("Error: munkiinfo.py - Error getting version attribute from middleware.")
 
     if middleware_name and middleware_version:
         return middleware_name + '-' + middleware_version
@@ -158,7 +158,8 @@ def main():
 
     # Write munkiinfo report to cache
     output_plist = os.path.join(cachedir, 'munkiinfo.plist')
-    plistlib.writePlist(munkiinfo_report(), output_plist)
+    with open(output_plist, 'wb') as fp:
+        plistlib.dump(munkiinfo_report(), fp)
 
 if __name__ == "__main__":
     main()
