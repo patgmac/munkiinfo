@@ -2,13 +2,13 @@
 
 use CFPropertyList\CFPropertyList;
 
-class munkiinfo_model extends \Model
+class Munkiinfo_model extends \Model
 {
 
     public function __construct($serial = '')
     {
           parent::__construct('id', 'munkiinfo'); //primary key, tablename
-          $this->rs['id'] = 0;
+          $this->rs['id'] = "";
           $this->rs['serial_number'] = $serial;
           $this->rs['munkiinfo_key'] = '';
           $this->rs['munkiinfo_value'] = '';
