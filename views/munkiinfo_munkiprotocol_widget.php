@@ -1,6 +1,6 @@
 <div class="col-lg-4 col-md-6">
 	<div class="card" id="munkiinfo-munkiprotocol-widget">
-	  <div class="card-heading" data-container="body" data-i18n="[title]munkiinfo.munkiprotocol.tooltip">
+	  <div class="card-header" data-container="body" data-i18n="[title]munkiinfo.munkiprotocol.tooltip">
 	    <i class="fa fa-magic"></i>
         <span data-i18n="munkiinfo.munkiprotocol.title"></span>
         <a href="/show/listing/munkireport/munki" class="pull-right"><i class="fa fa-list"></i></a>
