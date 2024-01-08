@@ -7,7 +7,6 @@
  **/
 class munkiinfo_controller extends Module_controller
 {
-    
     protected $module_path;
     protected $view_path;
 
@@ -19,6 +18,7 @@ class munkiinfo_controller extends Module_controller
         $this->module_path = dirname(__FILE__);
         $this->view_path = dirname(__FILE__) . '/views/';
     }
+
   /**
    * Default method
    *
@@ -28,7 +28,7 @@ class munkiinfo_controller extends Module_controller
     {
         echo "You've loaded the munkiinfo module!";
     }
-  
+
     /**
     * undocumented function summary
     *
@@ -48,7 +48,6 @@ class munkiinfo_controller extends Module_controller
         $obj->view('munkiprotocol_listing', $data, $this->view_path);
     }
 
-  
   /**
    * Get Munki Protocol Statistics
    *
@@ -82,7 +81,6 @@ class munkiinfo_controller extends Module_controller
    **/
     public function get_data($serial = '')
     {
-
         $out = array();
         $temp = array();
         if (! $this->authorized()) {
@@ -100,4 +98,4 @@ class munkiinfo_controller extends Module_controller
         $obj = new View();
         $obj->view('json', array('msg' => $out));
     }
-} // END class default_module
+} // END class munkiinfo_module

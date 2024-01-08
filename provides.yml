@@ -1,0 +1,7 @@
+listings:
+    munkiinfo:
+        view: munkiinfo_listing
+        i18n: munkiinfo.listing
+widgets:
+    munkiinfo_munkiprotocol:
+        view: munkiinfo_munkiprotocol_widget

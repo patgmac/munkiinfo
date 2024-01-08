@@ -4,7 +4,6 @@ use CFPropertyList\CFPropertyList;
 
 class Munkiinfo_model extends \Model
 {
-
     public function __construct($serial = '')
     {
           parent::__construct('id', 'munkiinfo'); //primary key, tablename

@@ -25,7 +25,6 @@ except ImportError:
         exit(1)
 
 
-
 def pref_to_str(pref_value):
     """If the value of a preference is None return an empty string type
     so we can write this data to a plist. Convert Bool values to strings
@@ -43,8 +42,11 @@ def pref_to_str(pref_value):
 
 def munki_prefs():
     """A full listing of all Munki preferences"""
+    ''' https://github.com/munki/munki/wiki/Preferences '''
+    ''' Last updated for version 6.4 of Munki '''
     our_prefs = [
         'AppleSoftwareUpdatesOnly',
+        'AggressiveUpdateNotificationDays',
         'InstallAppleSoftwareUpdates',
         'UnattendedAppleUpdates',
         'SoftwareUpdateServerURL',
@@ -62,6 +64,7 @@ def munki_prefs():
         'LogToSyslog',
         'LoggingLevel',
         'DaysBetweenNotifications',
+        'UseNotificationCenterDays',
         'UseClientCertificate',
         'UseClientCertificateCNAsClientIdentifier',
         'SoftwareRepoCAPath',
@@ -80,9 +83,11 @@ def munki_prefs():
         'MSUDebugLogEnabled',
         'LocalOnlyManifest',
         'FollowHTTPRedirects',
+        'IgnoreSystemProxies',
         'PerformAuthRestarts',
         'RecoveryKeyFile',
-        'UseNotificationCenterDays',
+        'ShowOptionalInstallsForHigherOSVersions',
+        'EmulateProfileSupport',
         'OldestUpdateDays',
         'PendingUpdateCount'
     ]
