@@ -19,6 +19,7 @@ _NOTE:_ the names line up with [Munki Preferences](https://github.com/munki/munk
 * FollowHTTPRedirects
 * HelpURL
 * IconURL
+* IgnoreMiddleware
 * InstallAppleSoftwareUpdates
 * InstallRequiresLogout
 * LocalOnlyManifest
