@@ -84,7 +84,7 @@ def munki_prefs():
         'LocalOnlyManifest',
         'FollowHTTPRedirects',
         'IgnoreSystemProxies',
-        'IgnoreMiddleware'
+        'IgnoreMiddleware',
         'PerformAuthRestarts',
         'RecoveryKeyFile',
         'ShowOptionalInstallsForHigherOSVersions',
